@@ -93,7 +93,7 @@ function TaskList() {
                 </tbody>
                 </table>
             ) : (
-                'No Task Found. Create a new task'
+                <h3 style={{fontStyle:'italic'}}>No Task Found. Create a new task</h3>
             )}
         </div>
     );

@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@1&family=Nunito:ital,wght@0,400;1,500;1,600;1,700;1,800&display=swap');
 .form_container {
+	font-family: 'Nunito';
+	font-style: italic;
 	display: flex;
-	gap: 2rem;
+	gap: 4rem;
 	@media only screen and (max-width: 768px) {
 		flex-direction: column;
 	}
