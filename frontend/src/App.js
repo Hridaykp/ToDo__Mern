@@ -3,6 +3,7 @@ import { Toaster } from 'react-hot-toast';
 import Home from './pages/Home';
 import EditProfile from './pages/EditProfile';
 import Auth from './pages/Auth';
+import PrivateRoutes from './components/PrivateRoutes';
 
 function App() {
     return (
@@ -16,10 +17,11 @@ function App() {
                 }}
             ></Toaster>
             <Routes>
-                <Route exact path='/' element={< Home />} />
-                <Route exact path='/edit-profile' element={< EditProfile />} />
+                <Route element={<PrivateRoutes/>} >
+                    <Route exact path='/' element={< Home />} />
+                    <Route exact path='/edit-profile' element={< EditProfile />} />
+                </Route>
                 <Route exact path='/auth' element={< Auth />} />
-
             </Routes>
         </>
     );
