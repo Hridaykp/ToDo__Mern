@@ -9,4 +9,6 @@ const router = express.Router();
 router.use("/auth", authRoutes);
 router.use("/tasks", checkAuth, taskRoutes);
 router.use("/users", checkAuth, usersRoutes);
+
+
 export default router;

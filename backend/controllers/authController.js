@@ -71,7 +71,7 @@ export const logout = async (req, res) => {
 };
 
 
-// 
+// for checking if logged in or not..
 export const isLoggedIn = async (req, res) => {
     const token = req.cookies.access_token;
     if (!token) {
