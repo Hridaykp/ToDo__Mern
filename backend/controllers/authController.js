@@ -1,15 +1,17 @@
 import bycryptjs from 'bcryptjs';
 import User from '../models/User.js';
 import jwt from 'jsonwebtoken';
+import createError from '../utils/error.js';
 
-export const register = async(req, res) => {
+// for register user
+export const register = async(req, res, next) => {
     if(!req.body.name || !req.body.email || !req.body.password){
-        return res.json ("required name, email, password !!!");
+        return next(createError({ status: 400, message: 'Name, Email & Password are required '}));
     }
 
     try{
-        const salt = await bycrptjs.genSalt(10);
-        const hashedPassword = await bycrptjs.hash(req.body.password, salt);
+        const salt = await bycryptjs.genSalt(10);
+        const hashedPassword = await bycryptjs.hash(req.body.password, salt);
         const newUser = new User({
             name: req.body.name,
             email: req.body.email,
@@ -20,14 +22,15 @@ export const register = async(req, res) => {
         return res.status(201).json('New User Created');
     }catch(err){
         console.log(err);
-        return res.json("server error");
+        return next(err);
     }
 }
 
-
-export const login = async(req, res) => {
+// for login user
+export const login = async(req, res, next) => {
     if (!req.body.email || !req.body.password) {
-        return res.json("Email and password are required")
+        return next(createError({ status: 400, message: 'Email, password is required '}));
+
     }
 
     try{
@@ -35,11 +38,12 @@ export const login = async(req, res) => {
             'name email password',
         );
         if(!user){
-            return res.status(404).json("No user found !!");
+            return next(createError({ status: 404, message: 'No user found !!'}));
         }
         const isCorrectPassword = await bycryptjs.compare(req.body.password, user.password);
         if(!isCorrectPassword){
-            return res.json("Password incorrect");
+            return next(createError({ status: 400, message: 'Password is incorrect !!'}));
+
         }
         const payload = {
             id: user._id,
@@ -56,7 +60,7 @@ export const login = async(req, res) => {
         
     }catch(err){
         console.log(err);
-        return res.json("server error");
+        return next(err);
     }
 }
 

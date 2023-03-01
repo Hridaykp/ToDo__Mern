@@ -18,7 +18,14 @@ app.use(cookieParser());
 //routes
 app.use('/api', allRoutes);
 
+// error handling
+app.use((err, req, res, next) =>{
+    const status = err.statusCode || 500;
+    const message = err.message || "Internal server error";
+    return res.status(status).json({message, stack: err.stack})
+});
 
+// connect database
 const connectDB = async() =>{
     try{
         await mongoose.connect(process.env.MONGO_URI);
