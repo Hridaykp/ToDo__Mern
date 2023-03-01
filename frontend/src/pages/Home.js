@@ -1,11 +1,13 @@
-import React from 'react'
-import Layout from '../components/Layout'
-import Navbar from '../components/nav/Navbar'
+import React from 'react';
+import Layout from '../components/Layout';
+import Navbar from '../components/nav/Navbar';
+import TaskList from '../components/task/TaskList';
 
 export default function Home() {
     return (
         <Layout>
-            <Navbar></Navbar>
+            <Navbar/>
+            <TaskList/>
         </Layout>
     )
 }
