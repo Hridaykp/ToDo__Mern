@@ -30,6 +30,5 @@
       // Todos List with different users
       
   Preview :-
-      ![Screenshot (52)](https://user-images.githubusercontent.com/116939133/222277134-e480f0c4-a5f7-46e9-a559-cfb16550f749.png)  
-      ![Screenshot (53)](https://user-images.githubusercontent.com/116939133/222277182-f510cdca-8188-4527-81a8-57babed564f9.png)
-      ![Screenshot (54)](https://user-images.githubusercontent.com/116939133/222277037-03cb8789-640c-480f-b9b0-e6ceee595297.png)
+      [screen-capture (10).webm](https://user-images.githubusercontent.com/116939133/222355360-08b4ce2e-dcb1-4563-ad23-8e47c313ec67.webm)
+
