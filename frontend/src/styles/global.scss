@@ -11,7 +11,7 @@ html {
 }
 
 body {
-	background: rgb(234, 234, 240);
+	background: rgb(188, 226, 218);
 }
 
 a {
@@ -22,11 +22,12 @@ a {
 
 .margin{
 	margin-left: 37%;
-	font-size: 4rem;
+	font-size: 4.65rem;
 	font-weight: 700;
 	margin-bottom: 17px;
-	font-family: 'Merriweather';
-	text-shadow: 4px 2px 3px grey;
-	letter-spacing: 2px;
-	color: darkblue;
+	font-family:Cambria;
+	text-decoration: underline;
+	text-shadow: 1px 1px grey;
+	letter-spacing: 0px;
+	color: rgb(11, 11, 36);
 }
